@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/catering.png">
+    <title>Catering And Events</title>
+    <link rel="stylesheet" type="text/css" href="HomePage.css">
+    <style>
+      .centered-image{
+        display: flex;
+        margin: 0 auto;
+      }
+    </style>
+</head>
+<body>
+  <div class="h2">
+    <h2>Catering And Events</h2>
+    <hr color="black">
+  </div>
+  <div class="custom-box">
+    <img id="imageToShow" src="images/catering2.jpg" alt="">
+    <div class="text-overlay">
+      <h3>Your Text Here</h3>
+      <button onclick="changeImage('prev')">Previous</button>
+      <button onclick="changeImage('next')">Next</button>
+    </div>
+    <div class="bottom-box">
+      <div class="socials">
+        <h3>Follow Us</h3>
+        <ul>
+          <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+          <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+          <li><a href="#"><ion-icon name="logo-whatsapp"></ion-icon></a></li>
+        </ul>
+      </div>
+      <div class="company-details">
+        <h3>About Us</h3>
+        <p>Provide a brief description of your company here.</p>
+        <!-- Add more details about your company as needed -->
+      </div>
+    </div>
+</div>
+  <div class="sidebar">
+    <ul>
+      <li class="logo">
+        <a href="#">
+          <span class="icon"><ion-icon name="fast-food"></ion-icon></span>
+          <span class="text">*Website Logo*</span>
+        </a>
+      </li>
+      <li>
+        <a href="HomePage.html">
+          <span class="icon"><ion-icon name="home"></ion-icon></span>
+          <span class="text">Home</span>
+        </a>
+      </li>
+      <li>
+        <a href="AboutUs.html">
+          <span class="icon"><ion-icon name="balloon"></ion-icon></span>
+          <span class="text">About Us</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <span class="icon"><ion-icon name="person"></ion-icon></span>
+          <span class="text">Services</span>
+        </a>
+      </li>
+      <li>
+        <a href="events.html">
+          <span class="icon"><ion-icon name="calendar"></ion-icon></span>
+          <span class="text">Events</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <span class="icon"><ion-icon name="pizza"></ion-icon></span>
+          <span class="text">Menu</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <span class="icon"><ion-icon name="megaphone"></ion-icon></span>
+          <span class="text">Gallery</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <span class="icon"><ion-icon name="chatbubble"></ion-icon></span>
+          <span class="text">Feedback About Us</span>
+        </a>
+      </li>
+
+      </div>
+    </ul>
+  </div>
+  <img class="centered-image" src="Sportsmen.png" alt="img1">
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script>
+    let currentImageIndex = 0;
+    const imageArray = [
+      'images/catering2.jpg',
+      'images/buffet-dining-dinner-lunch.jpg', // Add the path to your additional image
+      // Add more image paths as needed
+    ];
+  
+    function changeImage(direction) {
+      if (direction === 'prev') {
+        currentImageIndex = (currentImageIndex - 1 + imageArray.length) % imageArray.length;
+      } else {
+        currentImageIndex = (currentImageIndex + 1) % imageArray.length;
+      }
+  
+      const imageToShow = document.getElementById('imageToShow');
+      imageToShow.src = imageArray[currentImageIndex];
+    }
+  </script>
+</body>
+</html>
